@@ -1,13 +1,16 @@
 const http = require('http');
 const fs = require('fs');
+const ejs = require('ejs')
+
+const html = fs.readFileSync('./index.ejs', 'UTF-8')
 
 const getFromClient = (req, res) => {
-  fs.readFile('./index.html', 'UTF-8', (error, data) => {
-    const content = data.replace(/replaced/g, '置換されたテキスト')
-    res.writeHead(200, { 'Content-Type': 'text/html'})
-    res.write(content)
-    res.end()
+  const content = ejs.render(html, {
+    content: 'ejsで組み込まれた文章'
   })
+  res.writeHead(200, { 'Content-Type': 'text/html'})
+  res.write(content)
+  res.end()
 }
 
 const server = http.createServer(getFromClient)
