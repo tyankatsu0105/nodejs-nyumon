@@ -1,23 +1,17 @@
 {
   "name": "nodejs-nyumon",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tyankatsu0105/nodejs-nyumon.git"
-  },
-  "keywords": [],
-  "author": "tyankatsu <frips.ryilsufupe+dev@gmail.com> (https://tyankatsu.netlify.com/)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tyankatsu0105/nodejs-nyumon/issues"
-  },
-  "homepage": "https://github.com/tyankatsu0105/nodejs-nyumon#readme",
-  "devDependencies": {
-    "ejs": "^3.0.1"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-sass-middleware": "0.11.0"
   }
 }
